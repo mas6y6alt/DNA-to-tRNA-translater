@@ -19,6 +19,71 @@ div.mainbox {
     border-style: solid;
     min-width: 500px;
     min-height: 40px;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.247);
+}
+
+input.line {
+    background-color: #414141;
+    outline: none;
+    border-style: solid;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.inputheader {
+    margin: 5px;
+}
+
+p.context {
+    font-size: 13px;
+    color:#e2e2e2
+}
+
+button.buttonthing {
+    background-color: #7c7c7c;
+    outline: none;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #555555;
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+button.buttonthing:hover {
+    background-color: #8f8f8f;
+}
+
+button.buttonthing:active {
+    transform: scale(0.99);
+    background-color: #636363;
+}
+
+button.button {
+    background-color: #7c7c7c;
+    outline: none;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #555555;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+button.button:hover {
+    background-color: #8f8f8f;
+}
+
+button.button:active {
+    transform: scale(0.99);
+    background-color: #636363;
 }
