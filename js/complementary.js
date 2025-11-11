@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded",() => {
+    document.querySelector("#backmain").addEventListener("click",() => {
+        window.location.href = "/DNA-biology-tool";
+    });
+
     const dnainput = document.querySelector("#DNA input.line");
     const dnainput2 = document.querySelector("#DNA2 input.line");
 
