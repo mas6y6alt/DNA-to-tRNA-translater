@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#backmain").addEventListener("click",() => {
-        window.location.href = "/DNA-biology-tool"
+    document.querySelector("#backmain").addEventListener("click", () => {
+        window.location.href = "/DNA-biology-tool";
     });
 
     function convertToMRNA(input) {
@@ -8,26 +8,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function convertToDRNA(input) {
-        return input.replace(/T/g, "U");
+        return input.replace(/U/g, "T");
     }
 
-    const mrnainput = document.querySelector("#M-RNA input.line");
-    mrnainput.addEventListener("input",() => {
-        if (/^[AUGC]*$/.test(dnainput.value)) {
-            mrnainput.style.color = "white";
-            dnainput.value = convertToDRNA(dnainput.value);
-        } else {
-            mrnainput.style.color = "red";
-        }
-    })
-
     const dnainput = document.querySelector("#DNA input.line");
-    dnainput.addEventListener("input",() => {
-        if (/^[ATGC]*$/.test(dnainput.value)) {
+    const mrnainput = document.querySelector("#M-RNA input.line");
+
+    // DNA -> mRNA
+    dnainput.addEventListener("input", () => {
+        const val = dnainput.value;
+
+        if (/^[ATGC]*$/.test(val)) {
             dnainput.style.color = "white";
-            mrnainput.value = convertToMRNA(dnainput.value);
+            mrnainput.value = convertToMRNA(val);
         } else {
             dnainput.style.color = "red";
         }
-    })
+    });
+
+    // mRNA -> DNA
+    mrnainput.addEventListener("input", () => {
+        const val = mrnainput.value;
+
+        if (/^[AUGC]*$/.test(val)) {
+            mrnainput.style.color = "white";
+            dnainput.value = convertToDRNA(val);
+        } else {
+            mrnainput.style.color = "red";
+        }
+    });
 });
+
