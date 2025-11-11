@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function convertToMRNA(input) {
-        return input.replace(/T/g, "U");
+        return input.replace(/T/gi, (match) => match === "T" ? "U" : "u");
     }
 
     function convertToDRNA(input) {
-        return input.replace(/U/g, "T");
+        return input.replace(/U/gi, (match) => match === "U" ? "T" : "t");
     }
 
     const dnainput = document.querySelector("#DNA input.line");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dnainput.addEventListener("input", () => {
         const val = dnainput.value;
 
-        if (/^[ATGC]*$/.test(val)) {
+        if (/^[ATGCatgc]*$/.test(val)) {
             dnainput.style.color = "white";
             mrnainput.value = convertToMRNA(val);
         } else {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mrnainput.addEventListener("input", () => {
         const val = mrnainput.value;
 
-        if (/^[AUGC]*$/.test(val)) {
+        if (/^[AUGCaugc]*$/.test(val)) {
             mrnainput.style.color = "white";
             dnainput.value = convertToDRNA(val);
         } else {
